@@ -10,8 +10,8 @@ export enum Outputs {
 }
 
 export enum State {
-    CachePrimaryKey = "CACHE_KEY",
-    CacheMatchedKey = "CACHE_RESULT"
+    CachePrimaryKey = "CHX_CACHE_KEY",
+    CacheMatchedKey = "CHX_CACHE_RESULT"
 }
 
 export enum Events {

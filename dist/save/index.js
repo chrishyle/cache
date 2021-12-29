@@ -4612,8 +4612,8 @@ var Outputs;
 })(Outputs = exports.Outputs || (exports.Outputs = {}));
 var State;
 (function (State) {
-    State["CachePrimaryKey"] = "CACHE_KEY";
-    State["CacheMatchedKey"] = "CACHE_RESULT";
+    State["CachePrimaryKey"] = "CHX_CACHE_KEY";
+    State["CacheMatchedKey"] = "CHX_CACHE_RESULT";
 })(State = exports.State || (exports.State = {}));
 var Events;
 (function (Events) {

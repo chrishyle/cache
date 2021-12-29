@@ -46724,11 +46724,6 @@ function run() {
                 utils.setCacheHitOutput(false);
                 return;
             }
-            // Validate inputs, this can cause task failure
-            if (!utils.isValidEvent()) {
-                utils.logWarning(`Event Validation Error: The event type ${process.env[constants_1.Events.Key]} is not supported because it's not tied to a branch or tag ref.`);
-                return;
-            }
             const primaryKey = core.getInput(constants_1.Inputs.Key, { required: true });
             core.saveState(constants_1.State.CachePrimaryKey, primaryKey);
             const restoreKeys = utils.getInputAsArray(constants_1.Inputs.RestoreKeys);

@@ -44909,10 +44909,6 @@ function run() {
                 utils.logWarning("Cache action is not supported on GHES. See https://github.com/actions/cache/issues/505 for more details");
                 return;
             }
-            if (!utils.isValidEvent()) {
-                utils.logWarning(`Event Validation Error: The event type ${process.env[constants_1.Events.Key]} is not supported because it's not tied to a branch or tag ref.`);
-                return;
-            }
             const state = utils.getCacheState();
             // Inputs are re-evaluted before the post action, so we want the original key used for restore
             const primaryKey = core.getState(constants_1.State.CachePrimaryKey);

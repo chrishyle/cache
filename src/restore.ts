@@ -1,7 +1,7 @@
 import * as cache from "@actions/cache";
 import * as core from "@actions/core";
 
-import { Events, Inputs, State } from "./constants";
+import { Inputs, State } from "./constants";
 import * as utils from "./utils/actionUtils";
 
 async function run(): Promise<void> {
@@ -11,16 +11,6 @@ async function run(): Promise<void> {
                 "Cache action is not supported on GHES. See https://github.com/actions/cache/issues/505 for more details"
             );
             utils.setCacheHitOutput(false);
-            return;
-        }
-
-        // Validate inputs, this can cause task failure
-        if (!utils.isValidEvent()) {
-            utils.logWarning(
-                `Event Validation Error: The event type ${
-                    process.env[Events.Key]
-                } is not supported because it's not tied to a branch or tag ref.`
-            );
             return;
         }
 
